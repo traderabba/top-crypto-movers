@@ -1,0 +1,51 @@
+body { font-family: Arial, sans-serif; margin: 0; background: #f0f2f5; }
+h1, h2 { text-align: center; margin: 20px 0; }
+h1 { font-size: 32px; }
+h2 { font-size: 26px; margin-top: 40px; }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.gainers-section { background: #f0f2f5; }
+.losers-section { background: #ffe6e6; }
+
+.bubble {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: 0.3s;
+    background: white;
+}
+
+.bubble:hover { transform: scale(1.08); }
+
+img { width: 50px; height: 50px; border-radius: 50%; }
+
+.symbol { font-size: 18px; font-weight: bold; margin-top: 8px; text-align: center; word-wrap: break-word; }
+.percent { margin-top: 4px; font-size: 16px; font-weight: bold; text-align: center; }
+.gainer-percent { color: green; }
+.loser-percent { color: red; }
+
+footer { text-align: center; margin: 20px 0; font-size: 14px; color: #555; }
+
+button { display:block; margin: 10px auto; padding:10px 20px; font-size:16px; border:none; border-radius:5px; background:#333; color:white; cursor:pointer;}
+
+#loading { text-align: center; font-size: 18px; margin-top: 40px; }
+
+@media (max-width: 600px) {
+    .bubble { width: 100px; height: 100px; margin: 8px; }
+    .symbol { font-size: 14px; }
+    .percent { font-size: 14px; }
+}
