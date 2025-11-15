@@ -1,8 +1,9 @@
 /* ===== Base Styles ===== */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   background: #f0f2f5;
+  color: #333;
 }
 
 h1, h2 {
@@ -34,6 +35,11 @@ footer {
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.1);
   max-width: 900px;
+  transition: transform 0.2s;
+}
+
+.section-card:hover {
+  transform: translateY(-3px);
 }
 
 .section-footer {
@@ -53,12 +59,20 @@ footer {
   margin-top: 15px;
 }
 
-.gainers-section { background: #f0f2f5; }
-.losers-section { background: #ffe6e6; }
+.gainers-section { 
+  background: #f0f2f5; 
+  padding: 10px; 
+  border-radius: 12px; 
+}
 
-/* ===== Bubble Styles ===== */
+.losers-section { 
+  background: #ffe6e6; 
+  padding: 10px; 
+  border-radius: 12px; 
+}
+
+/* ===== Bubble Styles with Gradient ===== */
 .bubble {
-  background: white;
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -68,17 +82,30 @@ footer {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
   text-align: center;
   word-wrap: break-word;
+  color: #fff; /* text color for contrast */
 }
 
-.bubble:hover { transform: scale(1.08); }
+.gainers-section .bubble {
+  background: linear-gradient(145deg, #b6f1b6, #5fc75f); /* green gradient */
+}
+
+.losers-section .bubble {
+  background: linear-gradient(145deg, #ffc6c6, #ff4c4c); /* red gradient */
+}
+
+.bubble:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
 
 img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.8); /* subtle border for visibility on gradient */
 }
 
 /* ===== Text Inside Bubbles ===== */
@@ -94,8 +121,10 @@ img {
   font-weight: bold;
 }
 
-.gainer-percent { color: green; }
-.loser-percent { color: red; }
+/* Remove color classes since gradient makes text white */
+.gainer-percent, .loser-percent {
+  color: #fff;
+}
 
 /* ===== Buttons ===== */
 button, .download-btn {
@@ -106,11 +135,12 @@ button, .download-btn {
   background: #333;
   color: white;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
 }
 
 button:hover, .download-btn:hover {
   background: #555;
+  transform: translateY(-2px);
 }
 
 /* ===== Mobile Responsiveness ===== */
@@ -126,5 +156,10 @@ button:hover, .download-btn:hover {
 
   .section-footer button {
     flex: 1 1 45%;
+  }
+
+  .section-card {
+    margin: 15px 10px;
+    padding: 15px;
   }
 }
