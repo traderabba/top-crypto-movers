@@ -4,8 +4,8 @@ async function fetchData() {
     const loadingDiv = document.getElementById("loading");
     loadingDiv.style.display = "block";
     try {
-        // Fetch first 3 pages in parallel
-        const pages = [1,2,3];
+        // Fetch first 5 pages in parallel
+        const pages = [1,2,3,4,5];
         const responses = await Promise.all(
             pages.map(page => fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=${page}&price_change_percentage=24h`).then(r => r.json()))
         );
