@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Crypto 24H Top Movers</title>
 <link rel="stylesheet" href="style.css">
-<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#333333">
 </head>
 <body>
@@ -38,18 +37,6 @@
 <!-- html2canvas for download functionality -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="script.js"></script>
-<script>
-// Service Worker registration
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').then(registration => {
-      console.log('Service Worker registered with scope:', registration.scope);
-    }).catch(err => {
-      console.log('Service Worker registration failed:', err);
-    });
-  });
-}
-</script>
 
 </body>
 </html>
