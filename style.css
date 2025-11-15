@@ -105,7 +105,7 @@ img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.8); /* subtle border for visibility on gradient */
+  border: 2px solid rgba(255,255,255,0.8);
 }
 
 /* ===== Text Inside Bubbles ===== */
@@ -121,7 +121,6 @@ img {
   font-weight: bold;
 }
 
-/* Remove color classes since gradient makes text white */
 .gainer-percent, .loser-percent {
   color: #fff;
 }
